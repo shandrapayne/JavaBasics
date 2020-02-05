@@ -4,7 +4,7 @@
 
 <p>To compile and run:</p>
 <ul>
-  <li>run javac FileName.java</li>
+  <li>javac FileName.java</li>
   <li>java ClassName</li>
  </ul>
 
