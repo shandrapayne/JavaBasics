@@ -1,7 +1,11 @@
 <h1>Java Basics</h1>
 
-<p>This is just a collection of stuff I am doing for CS1400. Some are assignments, some are exercises from the book.</p>
+<p>This is a collection of stuff I am doing for CSIS1400. Some are assignments. Some are just exercises from the book.</p>
 
-<p>NOTE: These are singular files. You cannot clone and run these.... unless you have the JDK and run javac FileName.java to compile. java ClassName to run</p>
+<p>To compile and run:</p>
+<ul>
+  <li>javac FileName.java</li>
+  <li>java ClassName</li>
+ </ul>
 
 
