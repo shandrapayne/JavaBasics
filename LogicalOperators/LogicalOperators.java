@@ -1,10 +1,8 @@
-// Shandra Payne
-package logicaloperatorsshandra;
 
 import java.util.Scanner;
 
 
-public class LogicalOperatorsShandra
+public class LogicalOperators
 {
     
     public static void main(String[] args)
@@ -31,6 +29,10 @@ public class LogicalOperatorsShandra
         {
             System.out.println("The number is divisble by 5 or 6, but not both.");
         }
+        
+        // close Scanner
+        input.close();
+      
         
     }
     

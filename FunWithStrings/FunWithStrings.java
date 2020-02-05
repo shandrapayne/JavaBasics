@@ -1,6 +1,4 @@
 
-package funwithstrings;
-
 
 public class FunWithStrings
 {

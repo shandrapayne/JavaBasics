@@ -1,5 +1,4 @@
-// Shandra Payne
-package calculatetip;
+
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
@@ -37,6 +36,9 @@ public class CalculateTip
         // display tipAmount and totalAmount
         System.out.println("The amount of the tip is: $" + df.format(tipAmountInDollars) +
                 "\n and the total bill is: $" + df.format(totalAmount));
+
+        // close Scanner
+        input.close();
     }
     
 }
