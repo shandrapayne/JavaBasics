@@ -177,8 +177,16 @@ public class ComputeTaxes
               tax = (8350 * 0.10) + (25600 * 0.15) + (6050 * 0.25)
               tax = 835 + 3840 + 1512.5
               tax = 6187.5
-              tax = $6,187.50
+              format tax = $6,187.50
                      
+                other for status 0:
+                    $5,000 (income <= 8350) tax = $500.00
+                    $25,000  (income <= 33950) tax = $3,332.50
+                    $75,000  (income <= 82250) tax = $14,937.50
+                    $160,000 (income <= 171550) tax = $38,520.00
+                    $325,000 (income <= 372950) tax = $92,392.50
+                    $425,000 (income >= 372951) tax = $126,433.50
+                   
 
             for (1) married filing jointly: 
               $250,000    (income <= 372950)
@@ -189,9 +197,16 @@ public class ComputeTaxes
                             + (69150 * 0.25) + (71800 * 0.28)
                             + (41150 * 0.33)
                tax = 1670 + 7680 + 17287.5 + 20104 + 13579.5         
-               tax = 60341
-               format tax = $60,341.00
+               tax = 60321
+               format tax = $60,321.00
 
+               other for status 1:
+                    $14,000  (income <= 16700) tax = $1,400.00
+                    $55,000  (income <= 67900) tax = $7,415.00
+                    $125,000 (income <= 137050) tax = $23,625.00
+                    $220,000 (income <= 208850) tax = $50,421.00
+                    $325,000 (income <= 372950) tax = $85,071.00
+                    $380,000 (income >= 372951) tax = $103,362.00
 
             for (2) married filing separately: 
               $112,000 (income <= 186475)
@@ -205,6 +220,14 @@ public class ComputeTaxes
                 tax = 25870.5
                 format tax = $25,870.50
 
+                other for status 2:
+                    $2,550   (income <= 8350) tax = $255.00
+                    $28,000  (income <= 33950) tax = $3,782.50
+                    $56,000  (income <= 68525) tax = $10,187.50
+                    $102,000 (income <= 104425) tax = $22,691.75
+                    $185,000 (income <= 186475) tax = $49,960.50
+                    $190,000 (income >= 186476) tax = $51,681.00
+
             for (3) head of household: 
               $360,000 (income <= 372950)
               tax = 11950 * 0.10 + (45500 - 11950) * 0.15
@@ -217,4 +240,11 @@ public class ComputeTaxes
               tax = 100619
               format tax = $100,619.00
 
+                other for status 3:
+                    $10,000  (income <= 11950) tax = $1,000.00
+                    $42,000  (income <= 45500) tax = $5,702.50
+                    $112,000 (income <= 117450) tax = $22,852.50
+                    $174,000 (income <= 190200) tax = $40,049.00
+                    $324,000 (income <= 372950) tax = $88,739.00
+                    $450,000 (income >= 372951) tax = $131,860.00
  */
