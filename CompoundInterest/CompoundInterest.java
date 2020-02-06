@@ -1,4 +1,3 @@
-package compoundinterest;
 
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
