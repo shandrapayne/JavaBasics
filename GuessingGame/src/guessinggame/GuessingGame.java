@@ -1,3 +1,5 @@
+package guessinggame;
+
 import java.util.Scanner;
 
 public class GuessingGame {
@@ -7,6 +9,7 @@ public class GuessingGame {
     int magicNumber, guess, min, max;
     Scanner input;
     String highOrLow;
+   
 
     // generate magicNumber between 0 - 100
     magicNumber = (int) (Math.random() * 101);
@@ -64,7 +67,4 @@ public class GuessingGame {
     (and so on)
     - if you enter a number outside of 0-100 it will throw an exception & end the program 
     with the error message.
-
-
-
 */
