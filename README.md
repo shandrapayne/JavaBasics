@@ -9,7 +9,7 @@
   <li>Make sure you have your JAVA_HOME variable path configured</li>
   <li>Open terminal and navigate to the directory of the file you want</li>
   <li><b>Compile:</b> javac FileName.java</li>
-  <li><b>Run:</b>java ClassName</li>
+  <li><b>Run:</b> java ClassName</li>
  </ul>
 
 
