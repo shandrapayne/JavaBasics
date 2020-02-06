@@ -1,6 +1,6 @@
-package guessinggame;
 
 import java.util.Scanner;
+
 
 public class GuessingGame {
 
