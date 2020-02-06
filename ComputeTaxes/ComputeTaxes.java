@@ -153,9 +153,6 @@ public class ComputeTaxes
                             + (372950 - 190200) * 0.33 + (income - 372950) * 0.35;
                 }
                 break;
-            default:
-                System.out.println("Error: invalid entry");
-                System.exit(1);
         }
 
         // display result
