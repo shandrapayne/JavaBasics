@@ -8,8 +8,8 @@
 
 <ul>
   <li>Navigate to the directory of the file you want to run.</li>
-  <li> `javac FileName.java`</li>
-  <li> `java ClassName`</li>
+  <li> ```javac FileName.java```</li>
+  <li> ```java ClassName```</li>
 </ul>
 
 <p>If it doesn't run:</p>
@@ -17,10 +17,10 @@
  <li>Ensure you have JDK installed on your local machine. If not, download it from here: <a href=" https://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Platform SE (JDK 13)</a></li>
  <li>Check to see if you have your JAVA_HOME variable path configured.
    <p>The following is for MacOS only:</p>
-   <p>`vim ~/.bash_profile`</p>
-   <p>Verify or add: `JAVA_HOME=x/Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home/bin/java` (Replace the jdk version with whateverversion you have installed.) You can check your version in another terminal tab with `javac -version`</p>
-  <p>`:wq`  (to save and quit)</p>
-  <p>`source ~/.bash_profile`</p>
+   <p>```vim ~/.bash_profile```</p>
+   <p>Verify or add: ```JAVA_HOME=x/Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home/bin/java``` (Replace the jdk version with whateverversion you have installed.) You can check your version in another terminal tab with `javac -version`</p>
+  <p>```:wq```  (to save and quit)</p>
+  <p>```source ~/.bash_profile```</p>
   <p>If you are new to Vim and lost/stuck... here's some help: <a href="https://www.keycdn.com/blog/vim-commands">Popular Vim Commands</a></p></li>
 </ul>
 
