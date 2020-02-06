@@ -50,8 +50,21 @@ public class GuessingGame {
     } // end of try
 
     catch (InvalidInputException e) {
-      e.printStackTrace();
+      System.out.println(e.getMessage());
     }
 
   }
 }
+
+/* 
+  The best way to test this without spending too much time:
+    - make your first guess be 50
+    - if it says it's too high then the number is between 0-49
+    - if it says it's too low the number is between 51-100
+    (and so on)
+    - if you enter a number outside of 0-100 it will throw an exception & end the program 
+    with the error message.
+
+
+
+*/
