@@ -20,10 +20,10 @@ java ClassName
 
 ## If it doesn't run:
 
-Ensure you have JDK installed on your local machine. If not, download it from here: 
+1.) Ensure you have JDK installed on your local machine. If not, download it from here: 
 <a href=" https://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Platform SE (JDK 13)</a>
 
-### Check to see if you have your JAVA_HOME variable path configured.
+2.) Check to see if you have your JAVA_HOME variable path configured.
  The following is for MacOS only:
 ```bash
 vim ~/.bash_profile
@@ -50,4 +50,4 @@ source ~/.bash_profile
 If you are new to Vim and lost/stuck... here's some help:
 <a href="https://www.keycdn.com/blog/vim-commands">Popular Vim Commands</a>
 
-If this doesn't help, another option would be to copy pasta to a Netbeans project. Just make sure to follow proper naming conventions.</p>
+If this doesn't help, another option would be to copy pasta to a Netbeans project. Just make sure to follow proper naming conventions.
