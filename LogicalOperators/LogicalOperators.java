@@ -1,4 +1,3 @@
-package logicaloperators;
 
 import java.util.Scanner;
 
