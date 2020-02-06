@@ -30,14 +30,13 @@ public class AddMeTogether {
       System.out.printf(" Do you want to enter another number? ");
       desireToAddMoreNumbers = input.next();
 
-      // if no, and only one number has been put in tell user the rules and ask if
-      // they want to enter another number. if stilll no, then exit and stop wasting
-      // the programs time.
+      // if no, and only one number has been put in tell user the rules and give
+      // them another chance to enter another number. 
       if ((desireToAddMoreNumbers.equalsIgnoreCase("no")) && (numberCount < 2)) {
         System.out.printf(" You need to enter at least 2 numbers to play."
             + "\n Do you want to enter another number to keep playing? ");
         desireToAddMoreNumbers = input.next();
-
+        // if still no, then exit and stop wasting the programs time!
         if (desireToAddMoreNumbers.equalsIgnoreCase("no")) {
           keepPlaying = false;
           System.out.println(" Ok. Come back when you are ready to play.");
