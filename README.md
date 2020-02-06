@@ -41,11 +41,14 @@ Back in original terminal tab (where you were editing) press the esc key then:
 ```bash
 :wq
 ``` 
- (to save and quit)
+
+Then:
 
 ```bash
 source ~/.bash_profile
 ```
+Now try running the file again.
+
 
 If you are new to Vim and lost/stuck... here's some help:
 <a href="https://www.keycdn.com/blog/vim-commands">Popular Vim Commands</a>
