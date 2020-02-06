@@ -9,7 +9,7 @@ public class AddMeTogether {
     input = new Scanner(System.in);
     boolean keepPlaying;
 
-    System.out.printf("  Welcome to Add Me Up!" + "\n I'm going to add all the numbers you enter. Let's begin."
+    System.out.printf("  Welcome to Add Me Together!" + "\n I'm going to add all the numbers you enter. Let's begin."
         + "\n Please enter a number: ");
 
     initialNumber = input.nextInt();
