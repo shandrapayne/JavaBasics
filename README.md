@@ -21,7 +21,7 @@ java ClassName
 ## If it doesn't run:
 
 1.) Ensure you have JDK installed on your local machine. If not, download it from here: 
-<a href=" https://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Platform SE (JDK 13)</a>
+<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Platform SE (JDK 13)</a>
 
 2.) Check to see if you have your JAVA_HOME variable path configured.
  The following is for MacOS only:
