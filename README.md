@@ -24,7 +24,8 @@ java ClassName
 <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Platform SE (JDK 13)</a>
 
 2.) Check to see if you have your JAVA_HOME variable path configured.
- The following is for MacOS only:
+ The following is for MacOS only.
+ Open up terminal:
 ```bash
 vim ~/.bash_profile
 ```
@@ -32,7 +33,7 @@ Verify or add:
 ```bash
 JAVA_HOME=x/Library/Java/JavaVirtualMachines/jdk-13.0.2.jdk/Contents/Home/bin/java
 ``` 
-(Replace the jdk version with whateverversion you have installed.) 
+(Replace the jdk version with whatever version you have installed.) 
 You can check your version in another terminal tab with:
 ```bash
 javac -version
