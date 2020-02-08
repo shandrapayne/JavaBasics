@@ -53,4 +53,4 @@ Now try running the file again.
 If you are new to Vim and lost/stuck... here's some help:
 <a href="https://www.keycdn.com/blog/vim-commands">Popular Vim Commands</a>
 
-If this doesn't help, another option would be to copy pasta to a Netbeans project. Just make sure to follow proper naming conventions.
+If this doesn't help, another option would be to copy pasta to a Netbeans project. Just make sure to follow proper naming conventions and include the package name.
