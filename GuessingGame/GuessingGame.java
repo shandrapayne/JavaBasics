@@ -7,13 +7,8 @@ public class GuessingGame {
 
     int magicNumber, guess, min, max;
     Scanner input;
-    String highOrLow;
    
-
-    // generate magicNumber between 0 - 100
     magicNumber = (int) (Math.random() * 101);
-
-    // set min and max
     min = 0;
     max = 100;
 
@@ -22,11 +17,8 @@ public class GuessingGame {
 
     guess = -1;
 
-    try {
-      // loop
       while (guess != magicNumber) {
 
-        // prompt user to enter a number
         System.out.println("Enter your guess: ");
         guess = input.nextInt();
 
@@ -43,27 +35,18 @@ public class GuessingGame {
         }
 
         else {
-          InvalidInputException outOfRange = new InvalidInputException(
-              "The number you entered is not between 0-100. Follow directions!");
-          throw outOfRange;
-        }
+          System.out.println("Your guess does not fall within the range (0 -100) ");
 
       }
-    } // end of try
 
-    catch (InvalidInputException e) {
-      System.out.println(e.getMessage());
     }
-
+    input.close();
   }
 }
-
 /* 
   The best way to test this without spending too much time:
     - make your first guess be 50
     - if it says it's too high then the number is between 0-49
     - if it says it's too low the number is between 51-100
     (and so on)
-    - if you enter a number outside of 0-100 it will throw an exception & end the program 
-    with the error message.
 */
