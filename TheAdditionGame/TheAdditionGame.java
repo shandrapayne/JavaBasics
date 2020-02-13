@@ -20,6 +20,7 @@ public class TheAdditionGame
         {
             rand1 = 10 + (int) (Math.random() * 41);
             rand2 = 10 + (int) (Math.random() * 41);
+            
         
             solution = rand1 + rand2;
             System.out.print(rand1 +  " + " + rand2 + " = ");

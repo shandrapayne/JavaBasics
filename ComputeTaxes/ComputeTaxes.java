@@ -156,7 +156,7 @@ public class ComputeTaxes
         }
 
         // display result
-        System.out.println("Tax is $" + df.format((int) (tax * 100) / 100.0));
+        System.out.println("Tax is $ " + df.format((int) (tax * 100) / 100.0));
 
         //close input
         input.close();

@@ -6,8 +6,9 @@ public class AddMeTogether {
     Scanner input;
     int initialNumber, numberToAdd, total, numberCount;
     String desireToAddMoreNumbers;
-    input = new Scanner(System.in);
     boolean keepPlaying;
+
+    input = new Scanner(System.in);
 
     System.out.printf("  Welcome to Add Me Together!" + "\n I'm going to add all the numbers you enter. Let's begin."
         + "\n Please enter a number: ");

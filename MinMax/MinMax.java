@@ -1,38 +1,39 @@
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
-public class MinMaxShandra
-{
+public class MinMax {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
 
-        int numberEntered, min, max, continueEnteringNumbers;
-        String dialogInput;
+        int numberEntered, min, max;
+        String continueEnteringNumbers;
         List<Integer> listOfNumbers;
-
+        Scanner input;
         listOfNumbers = new ArrayList<>();
 
-        do
-        {
+        input = new Scanner(System.in);
 
-            dialogInput = JOptionPane.showInputDialog("Enter a number: ");
-            numberEntered = Integer.parseInt(dialogInput);
+        continueEnteringNumbers = "yes";
+        do {
+
+            System.out.println("Enter a number: ");
+            numberEntered = input.nextInt();
 
             listOfNumbers.add(numberEntered);
 
-            continueEnteringNumbers = JOptionPane.showConfirmDialog(null,
-                    "Do you want to enter another number?");
+            System.out.println("Do you want to enter another number? (yes or no)");
+            continueEnteringNumbers = input.next();
 
-        } while (continueEnteringNumbers == 0);
+        } while (continueEnteringNumbers.equals("yes"));
 
         min = Collections.min(listOfNumbers);
         max = Collections.max(listOfNumbers);
 
-        JOptionPane.showMessageDialog(null, "Of the numbers you entered the smallest was: " + min + " and the largest was: " + max);
+        System.out.println("Of the numbers you entered the smallest was: " + min + " and the largest was: " + max);
+
+        input.close();
     }
 
 }
