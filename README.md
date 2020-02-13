@@ -3,6 +3,7 @@
 This is a collection of stuff I am doing for CSIS1400. It includes assignments, practice stuff from the book, and code challenges given in class.
 
 ## Basic instructions
+You can run these two different ways. You can use Docker, or compile and run it from the command line using the usual java commands. 
 
 #### OPTION A: DOCKER
 1.) Run this command first:
