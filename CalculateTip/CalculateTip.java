@@ -14,6 +14,12 @@ public class CalculateTip
         double tipAmountInDollars;
         double totalAmount;
         DecimalFormat df = new DecimalFormat();
+
+         // decimal format
+         df.setMinimumFractionDigits(2);
+         df.setMaximumFractionDigits(2);
+         df.setGroupingUsed(true);
+         df.setGroupingSize(3);
     
         System.out.println("Enter the amount of your bill ( ie: 25.00 ) : ");
         amountOfBill = input.nextDouble();
