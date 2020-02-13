@@ -50,10 +50,7 @@ You can check your version in another terminal tab with:
 ```bash
 javac -version
 ```
-Back in original terminal tab (where you were editing) press the esc key then:
-```bash
-:wq
-``` 
+Save the changes to your profile.
 
 Then:
 
