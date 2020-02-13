@@ -22,7 +22,8 @@ public class UpperLimit {
 
             } while (n <= upperLimit);
         }
-
+        
+        input.close();
     }
 
 }
