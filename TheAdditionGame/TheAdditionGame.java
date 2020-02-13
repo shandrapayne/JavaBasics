@@ -43,7 +43,6 @@ public class TheAdditionGame
 
         System.out.println("You answered " + numOfCorrectAnswers + " of " + problemsGiven + " problems correctly.");
         System.out.println("Thanks for playing!");
-        System.exit(0);
 
         input.close();
     }
