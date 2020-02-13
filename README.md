@@ -14,7 +14,7 @@ make build
 ```bash
 make ProgramName
 ```
-(replace project name with the program you want to run)
+(replace ProgramName with the program you want to run)
 
 #### OPTION B: Compile and run from terminal
 
