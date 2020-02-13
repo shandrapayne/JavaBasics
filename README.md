@@ -30,7 +30,11 @@ javac FileName.java
 java ClassName
 ```
 
-### If it doesn't run:
+### Troubleshooting:
+With OPTION A: DOCKER
+[Docker Troubleshooting](https://docs.docker.com/toolbox/faqs/troubleshoot/)
+
+With OPTION B: self compile
 
 1.) Ensure you have JDK installed on your local machine. If not, download it from here: 
 <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Platform SE (JDK 13)</a>
@@ -50,14 +54,13 @@ You can check your version in another terminal tab with:
 ```bash
 javac -version
 ```
-Save the changes to your profile.
-
-Then:
+Save the changes to your profile. Then:
 
 ```bash
 source ~/.bash_profile
 ```
-Now try running the file again.
+
+Now try running the program again.
 
 If you are new to Vim and lost/stuck... here's some help:
 [Popular Vim Commands](https://www.keycdn.com/blog/vim-commands)
