@@ -2,8 +2,6 @@
 
 This is a collection of stuff I am doing for CSIS1400. It includes assignments, practice stuff from the book, and code challenges given in class.
 
-NOTE: For the sake of simplicity, these are NOT entire projects built with NetBeans or Intellij. (too many unnecessary folders and files!) These are meant to be compiled and ran from the command line.
-
 ## Basic instructions
 
 #### OPTION A: DOCKER
