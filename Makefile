@@ -1,4 +1,4 @@
-.PHONY: all AddMeTogether CalculateTip CompoundInterest ComputeTaxes GreatestCommonDivisor GuessingGame ISBNChecksum MinMax TheAdditionGame UpperLimit build
+.PHONY: all AddMeTogether CalculateTip CompoundInterest ComputeTaxes GreatestCommonDivisor GuessingGame ISBNChecksum MinMax TheAdditionGame UpperLimit FairCoin build
 
 # Must run "make build" first, then any make command should work. example: "make ComputeTaxes".
 
@@ -34,3 +34,6 @@ TheAdditionGame:
 
 UpperLimit:
 	docker run -it -e SCRIPT='UpperLimit' javabasics
+
+FairCoin:
+	docker run -it -e SCRIPT='FairCoin' javabasics
