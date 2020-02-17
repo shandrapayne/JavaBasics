@@ -27,9 +27,9 @@ public class FairCoin {
 
         if((heads >= 42)) {
             fairCoin = true;
-            System.out.println("Your coin is a fair coin.");
+            System.out.println("Your coin is unfair.");
         } else {
-            System.out.println("Unfair coin!");
+            System.out.println("Fair coin!");
         }
        
     }
