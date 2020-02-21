@@ -19,7 +19,7 @@ public class Quiz {
     public static String repeatItNtimes(String phrase, int numOfTimes) {
         int x;
         x = 0;
-        while (x <= numOfTimes) {
+        while (x < numOfTimes) {
             x++;
             System.out.println(phrase);
         }
