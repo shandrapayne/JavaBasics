@@ -29,6 +29,6 @@ public class Quiz {
 
 }
 /*
- * mini-quiz from class. We were given the just the method names, and told to
+ * mini-quiz from class. We were given just the method names, and told to
  * create the methods.
  */
