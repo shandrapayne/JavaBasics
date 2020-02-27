@@ -1,4 +1,4 @@
-.PHONY: all AddMeTogether CalculateTip CompoundInterest ComputeTaxes GreatestCommonDivisor GuessingGame ISBNChecksum MinMax TheAdditionGame UpperLimit Quiz build
+.PHONY: all AddMeTogether CalculateTip CompoundInterest ComputeTaxes GreatestCommonDivisor GuessingGame ISBNChecksum MinMax TheAdditionGame UpperLimit Quiz LetterGradeCalculator build
 
 # Must run "make build" first, then any make command should work. example: "make ComputeTaxes".
 
@@ -37,3 +37,6 @@ UpperLimit:
 
 Quiz:
 	docker run -it -e SCRIPT='Quiz' javabasics
+
+LetterGradeCalculator:
+	docker run -it -e SCRIPT='LetterGradeCalculator' javabasics
