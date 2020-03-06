@@ -3,32 +3,26 @@ import java.util.Scanner;
 public class Quiz {
 
     public static void main(String[] args) {
-        String s, t;
+      int a, b, x;
+      a = 3;
+      b = 4;
+      x = 1;
 
-        s = repeatIt("abc");
+       if(a<b)
+       {
+           while(a <= 30) 
+           {
+               a = a * 10;
+               x = x + 5;
+           }
+           System.out.println(x + "");
+           System.out.println(a);
+       }
+       else {
+           System.out.println("i better find a new career");
+       }
+       }
 
-        t = repeatItNtimes("xy", 4);
-
-    }
-
-    public static String repeatIt(String phrase) {
-        System.out.println(phrase);
-        return phrase;
-    }
-
-    public static String repeatItNtimes(String phrase, int numOfTimes) {
-        int x;
-        x = 0;
-        while (x < numOfTimes) {
-            x++;
-            System.out.println(phrase);
-        }
-        return phrase;
-
-    }
+    
 
 }
-/*
- * mini-quiz from class. We were given just the method names, and told to
- * create the methods.
- */

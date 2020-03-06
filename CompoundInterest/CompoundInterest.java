@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 public class CompoundInterest {
 
     public static void main(String[] args) {
-        double accountBalance, monthlySavingsAmount, annualInterestRate, monthlyInterestRate;
+        double accountBalance, monthlySavingsAmount, annualInterestRate;
         int monthsSaved;
         Scanner input;
         DecimalFormat df = new DecimalFormat();
@@ -17,16 +17,32 @@ public class CompoundInterest {
         System.out.println("What is your annual interest rate? (ie: 15)");
         annualInterestRate = input.nextDouble();
 
-        annualInterestRate = annualInterestRate / 100;
-        monthlyInterestRate = annualInterestRate / 12;
-        accountBalance = 0;
+        System.out.println("How many months have you saved?");
+        monthsSaved = input.nextInt();
 
-        for (monthsSaved = 1; monthsSaved < 7; monthsSaved++) {
-            accountBalance = (monthlySavingsAmount + accountBalance) * (1 + monthlyInterestRate);
-        }
-
-        System.out.println("After 6 months your balance will be: $" + df.format(accountBalance));
+        accountBalance = compoundInterest(monthsSaved, monthlySavingsAmount, annualInterestRate);
+        
+        System.out.println("After " + monthsSaved + " months your balance will be:  " + df.format(accountBalance));
 
     }
+
+
+
+    public static double compoundInterest(int months, double savingsPerMonth, double apr)
+    {
+        double accountBalance;
+    
+        accountBalance = 0;
+        while (months != 0) 
+        {
+            accountBalance = (accountBalance + savingsPerMonth) * (1 + (apr /100) /12);
+            months--;
+        }
+
+        return accountBalance;
+    }
+
+
+
 
 }
