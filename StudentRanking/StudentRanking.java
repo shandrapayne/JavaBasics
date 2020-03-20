@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-
 import java.util.ArrayList;
 
 public class StudentRanking 
@@ -12,9 +11,8 @@ public class StudentRanking
     File studentFile;
     ArrayList<String> fileStudentIDs = new ArrayList<String>();
     ArrayList<Double> fileGPAs = new ArrayList<Double>();
-    int[] occArr;
-    String[] gpaRanges =  {"0.0 to 0.49", "0.5 to 0.99", "1.0 to 1.49", "1.5 to 1.99", "2.0 to 2.49" , "2.5 to 2.99", "3.0 to 3.49", "3.5 to 4.0"};
-    
+    String stars;
+    ArrayList<Integer> gpaGroupOcc = new ArrayList<Integer>();
     studentFile = new File("smallstudentdata.txt");
   
     try(Scanner sc = new Scanner(studentFile)) {
@@ -31,16 +29,14 @@ public class StudentRanking
       exp.printStackTrace();
     }
 
-  
-    
-   // System.out.println("StudentIds: " + fileStudentIDs);
     System.out.println("gpas: " + fileGPAs);
 
-  occArr = gpaOccurrences(fileGPAs);
-  //System.out.println("legth of occArr: " + occArr.length);
-  for (int i = 0; i < occArr.length; i++)
-    System.out.println(occArr[i] + " ");
+    gpaGroupOcc = gpaRangeOccurrences(fileGPAs);
+    
+    System.out.println("gpa occurrences: " + gpaGroupOcc);
 
+    //stars = retrieveStarCount(gpaGroupOcc);
+   
     // read file: get id number and gpa
     // transfer data into two separate arrays. (assume no more than 1000 students in
     // file)
@@ -56,79 +52,88 @@ public class StudentRanking
   }
 
 
-  public static int[] gpaOccurrences(ArrayList<Double> gpas) {
-   // ArrayList<Integer> occurrenceFrequencyList = new ArrayList<Integer>();
-   int[] rangeOccurrences;
-   rangeOccurrences = new int[8];
-   //int[] occPerRangeMatrix;
-   //occPerRangeMatrix = new int[2][7];
-   int numOfOccurrences = 0;
-    // pass in gpa array and designate individual gpas
-
-    for(double gpa : gpas) {
-      if ((gpa >= 3.5) && (gpa <= 4.0)) { // 3.5 <= gpa <= 4.0
-        rangeOccurrences[0] = numOfOccurrences++;
-      }
-      if ((gpa >= 3.0) && (gpa < 3.5)) { // 3.0 <= gpa < 3.5 
-        rangeOccurrences[1] = numOfOccurrences++;
-      }
-      if ((gpa >= 2.5) && (gpa < 3.0)) { //  2.5 <= gpa < 3.0 
-        rangeOccurrences[2] = numOfOccurrences++;
-      }
-      if ((gpa >= 2.0) && (gpa < 2.5)){ //    2.0 <= gpa < 2.5
-        rangeOccurrences[3] = numOfOccurrences++;
-      }
-      if ((gpa >= 1.5) && (gpa < 2.0)) { // 1.5 <= gpa < 2.0 
-        rangeOccurrences[4] = numOfOccurrences++;
-      }
-      if ((gpa >= 1.0) && (gpa < 1.5)) { //  1.0 <= gpa < 1.5 
-        rangeOccurrences[5] = numOfOccurrences++;
-      }
-      if ((gpa >= 0.5) && (gpa < 1.0)) { // 0.5 <= gpa < 1.0 
-        rangeOccurrences[6] = numOfOccurrences++;
-      } 
-      if ((gpa >= 0.0) && (gpa < 0.5)) { //  0.0 <= gpa < 0.5 
-        rangeOccurrences[7] = numOfOccurrences++;
-      }
-
-    //  System.out.println("occurences count:");
-    }
-    /*
-      0.0 <= gpa < 0.5 
-      0.5 <= gpa < 1.0 
-      1.0 <= gpa < 1.5 
-      1.5 <= gpa < 2.0 
-      2.0 <= gpa < 2.5
-      2.5 <= gpa < 3.0 
-      3.0 <= gpa < 3.5 
-      3.5 <= gpa <= 4.0
-     */
-
-     return rangeOccurrences;
-
-  }
+  public static ArrayList<Integer> gpaRangeOccurrences(ArrayList<Double> gpas) {
+    ArrayList<Integer> rangeOccurrences = new ArrayList<Integer>();
+    rangeOccurrences.add(0);
+    rangeOccurrences.add(0);
+    rangeOccurrences.add(0);
+    rangeOccurrences.add(0);
+    rangeOccurrences.add(0);
+    rangeOccurrences.add(0);
+    rangeOccurrences.add(0);
+    rangeOccurrences.add(0);
+    rangeOccurrences.add(0);
   
- /* public static int countNumOfStudents() {
-    int numOfStudents;
-    numOfStudents = 0;
+ 
+    int a, b, c, d, e, f, g, h;
+    a = b = c = d = e = f = g = h = 0; 
 
-   // Arrays.sort(gpaGroups);
-    // loop through gpaGroups and count num of students in each
-  // for(int i = 0, length = gpaGroups.length; i < length; i++) {
-    if (i < length - 1) {
-      if (a[i] == a[i + 1]) {
-          numOfStudents++;
+
+    for(Double gpa : gpas) {
+      
+      if (gpa >= 3.5) { // 3.5 <= gpa <= 4.0
+        a += 1;
+        rangeOccurrences.set(0, a);
+      } else if (gpa >= 3.0) { // 3.0 <= gpa < 3.5 
+        b += 1;
+        rangeOccurrences.set(1, b);
+      } else if (gpa >= 2.5) { //  2.5 <= gpa < 3.0 
+        c += 1;
+        rangeOccurrences.set(2, c);
+      } else if (gpa >= 2.0){ //    2.0 <= gpa < 2.5
+        d += 1;
+        rangeOccurrences.set(3, d);
+      } else if (gpa >= 1.5) { // 1.5 <= gpa < 2.0 
+        e += 1;
+        rangeOccurrences.set(4, e);
+      } else if (gpa >= 1.0) { //  1.0 <= gpa < 1.5 
+        f += 1;
+        rangeOccurrences.set(5, f);
+      } else if (gpa >= 0.5) { // 0.5 <= gpa < 1.0 
+        g += 1;
+        rangeOccurrences.set(6, g);
+      } else if (gpa >= 0.0) { //  0.0 <= gpa < 0.5 
+        h += 1;
+        rangeOccurrences.set(7, h);
       }
-   }
+    }
+  
+    return rangeOccurrences;
+  }
 
-   return numOfStudents;
-  } */
 
 
-  public static int retrieveStarCount(ArrayList<Double> occurenceFreq) {
-    // pass in gpa array and calculate the amount of stars that should be shown for each
+  public static String[] retrieveStarCount(ArrayList<Double> occFreq) {
     int starCount;
     starCount = 0;
+    String[] stars;
+
+    StringBuilder starStr;
+    starStr = new StringBuilder();
+
+
+    for(Integer range : occFreq) {
+      starCount = range;
+     
+      if (starCount % 10 > 5)
+      {
+        starCount = starCount + (10 - (starCount % 10));
+      }
+      else
+      {
+       starCount = starCount - (starCount % 10);
+      }
+
+      for(int x = 0; x < starCount; x += 10) {
+        starStr.append("*");
+      }
+
+      stars[range] = starStr.toString();
+
+     }
+
+     return stars;
+    
 
     /*
       example: 
@@ -141,7 +146,6 @@ public class StudentRanking
       10.
      */
 
-    return starCount;
   }
 
 
