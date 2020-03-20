@@ -11,10 +11,13 @@ public class StudenRanking {
     String content;
     Scanner sc;
     List temps;
-    // temps = new ArrayList<Double>();
+    Double[] studentGPAarr;
+    String[] studentNumArr;
+
+   
     studentFile = new File("smallstudentdata.txt");
     sc = new Scanner(studentFile);
-    // temps = new ArrayList<Double>();
+
 
     try {
 
@@ -46,23 +49,39 @@ public class StudenRanking {
 
   // parse file
 
-  public static void parseLinesOfFile(String str) {
-    // String
+  public static void parseLine(String str) {
+    String studentID;
+    Double gpa;
+    Scanner sc = new Scanner(str);
 
+    // eventually separate the lines into two separate data arrays of studentID and gpa (these are separated by a space)
+    // sc.useDelimiter(" ");
+
+    // check if there is another line of input
+    while(sc.hasNext()) {
+      // eventually put these into separate arrays
+      studentID = sc.next();
+      gpa = sc.next();
+      System.out.println("studentID: " + studentID);
+      System.out.println("gpa: " + gpa);
+    }
+
+    sc.close();
   }
 
-  // parse file to get StudentID's
+  // parse file to get StudentID's and put into StudentIDarray
   public static String getStudentIDs() {
 
   }
 
-  // parse file to get GPA's
+  // parse file to get gpas and put into gpaArray
 
   public static Double getStudentGpas() {
 
   }
 
   public static Double getGPADesignation() {
+    // pass in gpa array and designate individual gpas
     /*
      * 0.0 <= gpa < 0.5 
      * 0.5 <= gpa < 1.0 
@@ -78,6 +97,7 @@ public class StudenRanking {
   }
 
   public static int retrieveStarCount() {
+    // pass in gpa array and calculate the amount of stars that should be shown for each
     int starCount;
 
     /*
