@@ -11,8 +11,9 @@ public class StudentRanking
     File studentFile;
     ArrayList<String> fileStudentIDs = new ArrayList<String>();
     ArrayList<Double> fileGPAs = new ArrayList<Double>();
-    String stars;
     ArrayList<Integer> gpaGroupOcc = new ArrayList<Integer>();
+    String stars;
+
     studentFile = new File("smallstudentdata.txt");
   
     try(Scanner sc = new Scanner(studentFile)) {
@@ -35,8 +36,14 @@ public class StudentRanking
     
     System.out.println("gpa occurrences: " + gpaGroupOcc);
 
-    //stars = retrieveStarCount(gpaGroupOcc);
-   
+    for(int y = 0; y < gpaGroupOcc.size(); y++) {
+      stars = retrieveStarCount(gpaGroupOcc);
+      System.out.println("gpa occurences: " + gpaGroupOcc +
+                         " stars: " + stars);
+    }
+
+
+
     // read file: get id number and gpa
     // transfer data into two separate arrays. (assume no more than 1000 students in
     // file)
@@ -103,36 +110,22 @@ public class StudentRanking
 
 
 
-  public static String[] retrieveStarCount(ArrayList<Double> occFreq) {
+  public static String retrieveStarCount(ArrayList<Integer> occFreq) {
     int starCount;
     starCount = 0;
-    String[] stars;
-
-    StringBuilder starStr;
-    starStr = new StringBuilder();
+    String starStr;
+    starStr = "";
 
 
     for(Integer range : occFreq) {
       starCount = range;
      
-      if (starCount % 10 > 5)
-      {
-        starCount = starCount + (10 - (starCount % 10));
-      }
-      else
-      {
-       starCount = starCount - (starCount % 10);
-      }
-
-      for(int x = 0; x < starCount; x += 10) {
-        starStr.append("*");
-      }
-
-      stars[range] = starStr.toString();
+    // add a "*"" per 10 students in range
+     
 
      }
 
-     return stars;
+     return starStr;
     
 
     /*
