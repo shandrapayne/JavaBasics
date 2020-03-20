@@ -12,7 +12,9 @@ public class StudentRanking
     File studentFile;
     ArrayList<String> fileStudentIDs = new ArrayList<String>();
     ArrayList<Double> fileGPAs = new ArrayList<Double>();
-   
+    int[] occArr;
+    String[] gpaRanges =  {"0.0 to 0.49", "0.5 to 0.99", "1.0 to 1.49", "1.5 to 1.99", "2.0 to 2.49" , "2.5 to 2.99", "3.0 to 3.49", "3.5 to 4.0"};
+    
     studentFile = new File("smallstudentdata.txt");
   
     try(Scanner sc = new Scanner(studentFile)) {
@@ -31,8 +33,13 @@ public class StudentRanking
 
   
     
-    System.out.println("StudentIds: " + fileStudentIDs);
+   // System.out.println("StudentIds: " + fileStudentIDs);
     System.out.println("gpas: " + fileGPAs);
+
+  occArr = gpaOccurrences(fileGPAs);
+  //System.out.println("legth of occArr: " + occArr.length);
+  for (int i = 0; i < occArr.length; i++)
+    System.out.println(occArr[i] + " ");
 
     // read file: get id number and gpa
     // transfer data into two separate arrays. (assume no more than 1000 students in
@@ -49,17 +56,42 @@ public class StudentRanking
   }
 
 
-  public static  getGPAdesignation(ArrayList<Double> gpas) {
-    String[] gpaRanges =  {"0.0 to 0.49", "0.5 to 0.99", "1.0 to 1.49", "1.5 to 1.99", "2.0 to 2.49" , "2.5 to 2.99", "3.0 to 3.49", "3.5 to 4.0"};
-    int numOfOccurences = 0;
+  public static int[] gpaOccurrences(ArrayList<Double> gpas) {
+   // ArrayList<Integer> occurrenceFrequencyList = new ArrayList<Integer>();
+   int[] rangeOccurrences;
+   rangeOccurrences = new int[8];
+   //int[] occPerRangeMatrix;
+   //occPerRangeMatrix = new int[2][7];
+   int numOfOccurrences = 0;
     // pass in gpa array and designate individual gpas
 
-    for(int gpa : gpas) {
-      if((0.0 <= gpa) && (gpa < 0.5)) {
-        numOfOccurences = countNumOfStudents();
+    for(double gpa : gpas) {
+      if ((gpa >= 3.5) && (gpa <= 4.0)) { // 3.5 <= gpa <= 4.0
+        rangeOccurrences[0] = numOfOccurrences++;
+      }
+      if ((gpa >= 3.0) && (gpa < 3.5)) { // 3.0 <= gpa < 3.5 
+        rangeOccurrences[1] = numOfOccurrences++;
+      }
+      if ((gpa >= 2.5) && (gpa < 3.0)) { //  2.5 <= gpa < 3.0 
+        rangeOccurrences[2] = numOfOccurrences++;
+      }
+      if ((gpa >= 2.0) && (gpa < 2.5)){ //    2.0 <= gpa < 2.5
+        rangeOccurrences[3] = numOfOccurrences++;
+      }
+      if ((gpa >= 1.5) && (gpa < 2.0)) { // 1.5 <= gpa < 2.0 
+        rangeOccurrences[4] = numOfOccurrences++;
+      }
+      if ((gpa >= 1.0) && (gpa < 1.5)) { //  1.0 <= gpa < 1.5 
+        rangeOccurrences[5] = numOfOccurrences++;
+      }
+      if ((gpa >= 0.5) && (gpa < 1.0)) { // 0.5 <= gpa < 1.0 
+        rangeOccurrences[6] = numOfOccurrences++;
       } 
+      if ((gpa >= 0.0) && (gpa < 0.5)) { //  0.0 <= gpa < 0.5 
+        rangeOccurrences[7] = numOfOccurrences++;
+      }
 
-      
+    //  System.out.println("occurences count:");
     }
     /*
       0.0 <= gpa < 0.5 
@@ -72,11 +104,28 @@ public class StudentRanking
       3.5 <= gpa <= 4.0
      */
 
-     return gpaGroups;
+     return rangeOccurrences;
 
   }
+  
+ /* public static int countNumOfStudents() {
+    int numOfStudents;
+    numOfStudents = 0;
 
-  public static int retrieveStarCount(ArrayList<Double> gpaGroupDesignation) {
+   // Arrays.sort(gpaGroups);
+    // loop through gpaGroups and count num of students in each
+  // for(int i = 0, length = gpaGroups.length; i < length; i++) {
+    if (i < length - 1) {
+      if (a[i] == a[i + 1]) {
+          numOfStudents++;
+      }
+   }
+
+   return numOfStudents;
+  } */
+
+
+  public static int retrieveStarCount(ArrayList<Double> occurenceFreq) {
     // pass in gpa array and calculate the amount of stars that should be shown for each
     int starCount;
     starCount = 0;
@@ -95,21 +144,6 @@ public class StudentRanking
     return starCount;
   }
 
-  public static int countNumOfStudents() {
-    int numOfStudents;
-    numOfStudents = 0;
-
-    Arrays.sort(gpaGroups);
-    // loop through gpaGroups and count num of students in each
-   for(int i = 0, length = gpaGroups.length; i < length; i++) {
-    if (i < length - 1) {
-      if (a[i] == a[i + 1]) {
-          numOfStudents++;
-      }
-   }
-
-   return numOfStudents;
-  }
 
 
  // public static double rankStudents() {
