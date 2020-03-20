@@ -18,7 +18,7 @@ public class StudenRanking {
 
     try {
 
-      while (studenFile.hasNextLine()) {
+      while (studentFile.hasNextLine()) {
         // find next line
         String token = studentFile.nextLine();
         parseLine(token);
@@ -64,8 +64,13 @@ public class StudenRanking {
 
   public static Double getGPADesignation() {
     /*
-     * 0.0 <= gpa < 0.5 0.5 <= gpa < 1.0 1.0 <= gpa < 1.5 1.5 <= gpa < 2.0 2.5 <=
-     * gpa < 3.0 3.0 <= gpa < 3.5 3.5 <= gpa <= 4.0
+     * 0.0 <= gpa < 0.5 
+     * 0.5 <= gpa < 1.0 
+     * 1.0 <= gpa < 1.5 
+     * 1.5 <= gpa < 2.0 
+     * 2.5 <= gpa < 3.0 
+     * 3.0 <= gpa < 3.5 
+     * 3.5 <= gpa <= 4.0
      */
 
     // return GPA;
