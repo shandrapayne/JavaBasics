@@ -34,6 +34,13 @@ public class StudenRanking {
     // transfer data into two separate arrays. (assume no more than 1000 students in
     // file)
     // may find it useful to creat additional arrays to complete the requirements.
+    // You must create a simple diagram to show how many students fall into each of
+    // 8 different categories. This type of diagram is known as a histogram and it
+    // is generally useful to show how data is distributed across a range.
+
+    // For each student in the input file, you must display their S-number, gpa, and
+    // class rank. The S-number and gpa will already be in your arrays; however, you
+    // must calculate their class rank.
 
   }
 
@@ -54,14 +61,6 @@ public class StudenRanking {
   public static Double getStudentGpas() {
 
   }
-
-  // You must create a simple diagram to show how many students fall into each of
-  // 8 different categories. This type of diagram is known as a histogram and it
-  // is generally useful to show how data is distributed across a range.
-
-  // or each student in the input file, you must display their S-number, gpa, and
-  // class rank. The S-number and gpa will already be in your arrays; however, you
-  // must calculate their class rank.
 
   public static Double getGPADesignation() {
     /*
