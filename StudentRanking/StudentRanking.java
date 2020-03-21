@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+
 public class StudentRanking 
 {
 
@@ -30,20 +31,10 @@ public class StudentRanking
       exp.printStackTrace();
     }
 
-    System.out.println("gpas: " + fileGPAs);
-
     gpaGroupOcc = gpaRangeOccurrences(fileGPAs);
+
+      System.out.println("gpa occurences: " + gpaGroupOcc);
     
-    System.out.println("gpa occurrences: " + gpaGroupOcc);
-
-    for(int y = 0; y < gpaGroupOcc.size(); y++) {
-      stars = retrieveStarCount(gpaGroupOcc);
-      System.out.println("gpa occurences: " + gpaGroupOcc +
-                         " stars: " + stars);
-    }
-
-
-
     // read file: get id number and gpa
     // transfer data into two separate arrays. (assume no more than 1000 students in
     // file)
@@ -69,8 +60,6 @@ public class StudentRanking
     rangeOccurrences.add(0);
     rangeOccurrences.add(0);
     rangeOccurrences.add(0);
-    rangeOccurrences.add(0);
-  
  
     int a, b, c, d, e, f, g, h;
     a = b = c = d = e = f = g = h = 0; 
@@ -117,13 +106,26 @@ public class StudentRanking
     starStr = "";
 
 
-    for(Integer range : occFreq) {
-      starCount = range;
+    for(Integer occ : occFreq) {
+      // TO DO: create star table
      
-    // add a "*"" per 10 students in range
-     
+      if (occ % 10 > 5)
+      {
+        starCount = starCount + (10 - (starCount % 10));
+      }
+      else
+      {
+       starCount = starCount - (starCount % 10);
+      }
+
+      for(int x = 0; x < starCount; x += 10) {
+        starStr += "*";
+      }
+
+      
 
      }
+    
 
      return starStr;
     
@@ -140,8 +142,6 @@ public class StudentRanking
      */
 
   }
-
-
 
  // public static double rankStudents() {
    
