@@ -13,7 +13,8 @@ public class StudentRanking
     ArrayList<String> fileStudentIDs = new ArrayList<String>();
     ArrayList<Double> fileGPAs = new ArrayList<Double>();
     ArrayList<Integer> gpaGroupOcc = new ArrayList<Integer>();
-    String stars;
+    ArrayList<String> stars = new ArrayList<String>();
+    String[][][] starTable;
 
     studentFile = new File("smallstudentdata.txt");
   
@@ -32,8 +33,10 @@ public class StudentRanking
     }
 
     gpaGroupOcc = gpaRangeOccurrences(fileGPAs);
+    stars = retrieveStarCount(gpaGroupOcc);
+    starTable = displayStarTable(stars, gpaGroupOcc);
 
-      System.out.println("gpa occurences: " + gpaGroupOcc);
+    System.out.println(starTable);
     
     // read file: get id number and gpa
     // transfer data into two separate arrays. (assume no more than 1000 students in
@@ -99,35 +102,27 @@ public class StudentRanking
 
 
 
-  public static String retrieveStarCount(ArrayList<Integer> occFreq) {
+  public static ArrayList<String> retrieveStarCount(ArrayList<Integer> occFreq) {
+    String starStr, finalStarStr;
     int starCount;
+    ArrayList<String> stars = new ArrayList<String>();
+   
+    starStr = "*";
     starCount = 0;
-    String starStr;
-    starStr = "";
-
 
     for(Integer occ : occFreq) {
       // TO DO: create star table
-     
-      if (occ % 10 > 5)
-      {
-        starCount = starCount + (10 - (starCount % 10));
-      }
-      else
-      {
-       starCount = starCount - (starCount % 10);
-      }
-
-      for(int x = 0; x < starCount; x += 10) {
-        starStr += "*";
-      }
-
-      
-
-     }
+      int num;
+      num = occ;
+      num = Math.round(num/10) * 10;
+      starCount = num/10;
+      finalStarStr = starStr.repeat(starCount);
+      stars.add(finalStarStr);
     
+     }
+     
 
-     return starStr;
+     return stars;
     
 
     /*
@@ -141,6 +136,26 @@ public class StudentRanking
       10.
      */
 
+  }
+
+  public static String[][][] displayStarTable(ArrayList<String> stars, ArrayList<Integer> occs) {
+    String[] gpaOcc = occs.toArray(new String[occs.size()]);
+    String[] starArr = stars.toArray(new String[stars.size()]);
+    String[] gpaGroups = { "4.0 - 3.5", "3.0 - 3.49", "2.5 - 2.99", "2.0 - 2.49", "1.5 - 1.99", "1.0 - 1.5", "0.5 - 0.99", "0.0 - 0.49"};
+    String[][][] starMatrix = { gpaGroups, gpaOcc, starArr };
+    System.out.println(starMatrix);
+   // String starTable;
+  //  starTable = "GPA Range   -   Students -   ";
+   
+    for(int i=0; i < starMatrix.length; i++){
+      for(int j=0; j < starMatrix[0].length; j++) {
+        for(int k=0; k < starMatrix[0][0].length; k++) {
+           starMatrix = starMatrix[i][j][k];
+        }
+      }
+    }
+
+   return starMatrix;
   }
 
  // public static double rankStudents() {
