@@ -8,7 +8,6 @@ public class StudentRanking
 {
 
   public static void main(String[] args) {
-    // declare vars
     File studentFile;
     ArrayList<String> fileStudentIDs = new ArrayList<String>();
     ArrayList<Double> fileGPAs = new ArrayList<Double>();
@@ -121,20 +120,7 @@ public class StudentRanking
     
      }
      
-
      return stars;
-    
-
-    /*
-      example: 
-      0.0 to 0.49 (48) ***** 
-      0.5 to 0.99 (82) ******** 
-      1.0 to 1.49 (65) *******
-      
-      The number in parentheses represents the total number of students that fall
-      within that category. Each * represents 10 students rounded to the nearest
-      10.
-     */
 
   }
 
