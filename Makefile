@@ -1,4 +1,4 @@
-.PHONY: all AddMeTogether CalculateTip CompoundInterest ComputeTaxes GreatestCommonDivisor GuessingGame ISBNChecksum MinMax TheAdditionGame UpperLimit LetterGradeCalculator TriangleMethods build
+.PHONY: all AddMeTogether CalculateTip CompoundInterest ComputeTaxes GreatestCommonDivisor GuessingGame ISBNChecksum MinMax TheAdditionGame UpperLimit LetterGradeCalculator TriangleMethods StudentRanking FractionOOP build
 
 # Must run "make build" first, then any make command should work. example: "make ComputeTaxes".
 
@@ -39,4 +39,10 @@ LetterGradeCalculator:
 	docker run -it -e SCRIPT='LetterGradeCalculator' javabasics
 
 TriangleMethods:
-	docker run -it -e SCRIPT='TraingleMethods' javabasics
+	docker run -it -e SCRIPT='TriangleMethods' javabasics
+
+StudentRanking:
+	docker run -it -e SCRIPT='StudentRanking' javabasics
+
+FractionOOP:
+	docker run -it -e SCRIPT='FractionOOP' javabasics
