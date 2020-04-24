@@ -11,8 +11,8 @@ public class StudentRanking {
     int amnt, i, place;
     String studentIDs;
     i = 0;
-    studentFile = new File("smallstudentdata.txt");
-    amt = getAmount(studentFile);
+    studentFile = new File("studentdata.txt");
+    amnt = getAmount(studentFile);
     studentIDs = new String[amnt];
     gpa = new double[amnt];
     rank = new int[amnt];
@@ -42,7 +42,7 @@ public class StudentRanking {
         System.out.println(getStars(histGPA[0]));
         System.out.print("0.5 to 0.99     (" + histGPA[1] + ")");
         System.out.println(getStars(histGPA[1]));
-        System.out.print("1.0 to 1.49     (" + histrogramGPA[2] + ")");
+        System.out.print("1.0 to 1.49     (" + histGPA[2] + ")");
         System.out.println(getStars(histGPA[2]));
         System.out.print("1.5 to 1.99     (" + histGPA[3] + ")");
         System.out.println(getStars(histGPA[3]));
@@ -57,9 +57,9 @@ public class StudentRanking {
 
         i = 0;
         
-        while (i != amt)
+        while (i != amnt)
         {
-            System.out.printf("%-9s%-4s  ",studentIDs[i], fileGPAs[i]);
+            System.out.printf("%-9s%-4s  ", studentIDs[i], fileGPAs[i]);
             System.out.println(rank(fileGPAs), i, amnt));
             i++;
         }
@@ -69,7 +69,7 @@ public class StudentRanking {
     int amount;
     amount = 0;
     try (Scanner studentdata = new Scanner(sf)) {
-      while (studentdata.hasNext()) // Gets total amount
+      while (studentdata.hasNext()) 
       {
         studentdata.next();
         studentdata.nextDouble();

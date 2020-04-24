@@ -22,6 +22,7 @@ public class Fraction
         denominator = d;
     }
 
+    // constructor 
     public Fraction()
     {
         numerator = 1;
@@ -75,7 +76,7 @@ public class Fraction
             }
         }
         
-        return this.numerator + "/" + denominator;
+        return numerator + "/" + denominator;
     }
     
     static int gcd(int a, int b) 
